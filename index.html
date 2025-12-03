@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de personajes de Rick and Morty - imágenes, estado y descripción.">
+  <title>Rick and Morty - Fan Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <section class="brand">
+        <h1 class="logo">Rick & Morty<span class="logo-dot">.</span></h1>
+        <p class="tag">Personajes · Imágenes · Descripciones</p>
+      </section>
+
+      <nav class="controls" aria-label="Controles de página">
+        <!-- Theme switch -->
+        <label class="theme-switch" for="theme-toggle">
+          <input id="theme-toggle" type="checkbox" aria-label="Cambiar tema claro/oscuro">
+          <span class="slider" aria-hidden="true"></span>
+        </label>
+        <button id="theme-label" class="theme-label" aria-pressed="false">Modo Claro</button>
+        <button id="load-more" class="btn">Cargar más</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section aria-labelledby="results-title" class="results-section">
+      <h2 id="results-title" class="sr-only">Personajes</h2>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <!-- Detail panel: muestra la descripción del personaje seleccionado -->
+      <aside id="detail-panel" class="detail-panel" role="region" aria-labelledby="detail-title" hidden>
+        <h3 id="detail-title" class="detail-title">Detalle</h3>
+        <div class="detail-content">
+          <figure class="detail-figure">
+            <img id="detail-image" src="" alt="">
+            <figcaption id="detail-name" class="detail-name"></figcaption>
+          </figure>
+          <div class="detail-body">
+            <p id="detail-desc" class="detail-desc"></p>
+            <ul class="detail-meta">
+              <li><strong>Estado:</strong> <span id="detail-status"></span></li>
+              <li><strong>Especie:</strong> <span id="detail-species"></span></li>
+              <li><strong>Género:</strong> <span id="detail-gender"></span></li>
+              <li><strong>Origen:</strong> <span id="detail-origin"></span></li>
+              <li><strong>Última ubicación:</strong> <span id="detail-location"></span></li>
+              <li><strong>Episodios:</strong> <span id="detail-episodes"></span></li>
+            </ul>
+          </div>
+        </div>
+        <button id="detail-close" class="btn btn-ghost" aria-label="Cerrar detalle">Cerrar</button>
+      </aside>
+
+      <ul id="cards" class="cards" aria-live="polite">
+        <!-- Cards (li > article > figure) rendered here by JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Datos obtenidos desde <a href="https://rickandmortyapi.com/api/character" target="_blank" rel="noreferrer">Rick and Morty API</a>.</p>
+      <p>Diseño inspirado en la paleta de la serie. Créditos: API pública de Rick and Morty.</p>
+    </div>
+  </footer>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
